@@ -3,6 +3,30 @@
 PS C:\Users\taroseri\Documents\TEMP\KUUUBEEEkubernetes-crash-course-master> kubectl apply -f 05-currency-conversion-microservice-basic/deployment.yaml
 deployment.apps/currency-conversion created
 
+CREATE DOCKER IMAGE & PUSH it 
+
+1. mvn clean install 
+
+- build docker image 
+
+2. docker push <dockerImage> 
+
+-----------------------------------------------------------
+
+
+
+3. kubectl get all - check if pods are running or not ready 
+
+
+kubectl apply -f deployment.yaml 
+
+PS C:\WINDOWS\system32> kubectl get nodes
+NAME                                           STATUS   ROLES    AGE   VERSION
+ip-192-168-38-191.us-east-2.compute.internal   Ready    <none>   14m   v1.24.10-eks-48e63af
+ip-192-168-5-13.us-east-2.compute.internal     Ready    <none>   14m   v1.24.10-eks-48e63af
+ip-192-168-71-81.us-east-2.compute.internal    Ready    <none>   15m   v1.24.10-eks-48e63af
+
+
 
 
 PS C:\WINDOWS\system32> eksctl create cluster --name in28minutes-cluster --nodegroup-name in28minutes-cluster-node-group  --node-type t2.medium --nodes 3 --nodes-min 3 --nodes-max 7 --managed --asg-access
