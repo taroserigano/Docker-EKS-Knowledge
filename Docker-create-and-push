@@ -1,0 +1,9 @@
+CREATE DOCKER IMAGE & PUSH it 
+
+1. mvn clean install 
+
+- build docker image 
+
+2. docker push <dockerImage> 
+
+-----------------------------------------------------------
