@@ -1,0 +1,17 @@
+eksctl utils associate-iam-oidc-provider --cluster in28minutes-cluster --approve
+
+Create IAM OIDC provider (can create manually in IAM > Identity Providers
+eksctl utils associate-iam-oidc-provider \
+    --region <region> \
+    --cluster <eks cluster name> \
+    --approve
+
+
+Create an IAM policy called ALBIngressControllerIAMPolicy and attach the iam-policy.yaml
+
+
+curl -o iam-policy.json https://raw.githubusercontent.com/kubernetes-sigs/aws-alb-ingress-controller/v1.1.8/docs/examples/iam-policy.json
+
+aws iam create-policy \
+    --policy-name ALBIngressControllerIAMPolicy \
+    --policy-document file://iam-policy.json
